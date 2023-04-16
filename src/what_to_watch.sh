@@ -5,6 +5,7 @@ sign=null
 vk_user_id=null
 vk_ts=null
 vk_ref=null
+user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36"
 
 function authenticate() {
 	# 1 - sign: (string): <sign>
@@ -28,7 +29,7 @@ function authenticate() {
 function get_data() {
 	curl --request GET \
 		--url "$api/get-data" \
-		--user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36" \
+		--user-agent "$user_agent" \
 		--header "content-type: application/json" \
 		--header "referer: https://movie.gettycar.ru/?$params"
 }
@@ -36,7 +37,7 @@ function get_data() {
 function check_subscribe() {
 	curl --request GET \
 		--url "$api/check-subscribe" \
-		--user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36" \
+		--user-agent "$user_agent" \
 		--header "content-type: application/json" \
 		--header "referer: https://movie.gettycar.ru/?$params" \
 		--data '{
@@ -48,7 +49,7 @@ function check_subscribe() {
 function get_random_movie() {
 	curl --request GET \
 		--url "$api/get-random-movie?user_vk_id=$user_vk_id&url=https://movie.gettycar.ru/?$params" \
-		--user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36" \
+		--user-agent "$user_agent" \
 		--header "content-type: application/json" \
 		--header "referer: https://movie.gettycar.ru/?$params"
 }
@@ -56,7 +57,7 @@ function get_random_movie() {
 function get_newest_movies() {
 	curl --request GET \
 		--url "$api/get-newest-movies?user_vk_id=$user_vk_id&url=https://movie.gettycar.ru/?$params" \
-		--user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36" \
+		--user-agent "$user_agent" \
 		--header "content-type: application/json" \
 		--header "referer: https://movie.gettycar.ru/?$params"
 }
