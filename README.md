@@ -3,6 +3,6 @@ Web-API for [what to watch](https://vk.com/app7532629) an vk service to get movi
 
 ## Example
 ```bash
-source what_to_watch.sh
+source ./what_to_watch.sh
 authenticate "sign" "vk_user_id" "vk_ts" "vk_ref"
 ```
